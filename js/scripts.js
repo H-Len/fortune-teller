@@ -1,38 +1,69 @@
 $(document).ready(function(){
-  $("form#transportation_survey").submit(function(event){
+  $("form#luck_survey").submit(function(event){
     event.preventDefault();
-    $("#work-responses").show();
-    $("input:checkbox[name=work-transportation]:checked").each(function(){
-      var workTransportationMode = $(this).val();
-      $('#work-responses').append(workTransportationMode + "<br>");
+    $("#badResponses").show();
+    // var lucky = 0;
+    $("input:checkbox[name=badLuck]:checked").each(function(){
+      // var badLuckSurvey = $(this).val();
+      // console.log(badLuckSurvey);
+      lucky -= 1;
+      console.log(lucky);
+      $('#badResponses').append(badLuckSurvey + "<br>");
     });
-    $("#fun-responses").show();
-    $("input:checkbox[name=fun-transportation]:checked").each(function(){
-      var funTransportationMode = $(this).val();
-      $('#fun-responses').append(funTransportationMode + "<br>");
+    $("#goodResponses").show();
+    $("input:checkbox[name=goodLuck]:checked").each(function(){
+      // var goodLuckSurvey = $(this).val();
+      // console.log(goodLuckSurvey);
+      lucky += 1;
+    //   $('#goodResponses').append(goodLuckSurvey + "<br>");
+    // });
+    // $('#luck_survey').show();
+    // var lucky = 0
+    // for (var i = 0; 0 <= i <= 10; i ++) {
+
+    // .forEach(function(responses) {
+    //   var badLuck = 0;
+    //   var goodLuck = 0;
+    //   if (badLuckSurvey) {
+    //     lucky = lucky -1;
+    //   }
+    //   else {
+    //     lucky += 1;
+    //   }
+    var lucky = 0;
     });
-    $('#transportation_survey').hide();
   });
+  console.log(lucky);
 });
 
-//Other uses for Checkbox Data:
-// Do note that you can do far more than simply display a user's responses back to them. The important part here is learning how to target currently-checked checkboxes with jQuery. Once you're able to do this, you could do anything with this information.
-//
-// For instance, we could set the values of checked boxes aside in an array:
-//
-// ...
-//   var userResponses = [];
-//   $("input:checkbox[name=work-transportation]:checked").each(function(){
-//       var workTransportationMode = $(this).val();
-//       userResponses.push(workTransportationMode);
-//     });
-// ...
-// Or we could manipulate this data in whatever fashion we please:
-//
-// ...
-//   $("input:checkbox[name=work-transportation]:checked").each(function(){
-//       var workTransportationMode = $(this).val();
-//       var capitalWorkTransportationMode = workTransportationMode.toUpperCase();
-//       ...
-//     });
-// ...
+
+$(document).ready(function() {
+  $("form#luck_survey").submit(function(event) {
+    event.preventDefault();
+    var badLuckVal = $("input:checkbox[name=badLuck]:checked").val();
+    console.log(badLuckVal);
+    var goodLuckVal = $("input:checkbox[name=goodLuck]:checked").val();
+
+    var lucky = 0;
+    newArray = [];
+    badLuckVal.forEach(function(luck){
+      if (luck === true) {
+        lucky -= 1;
+        newArray.push(luck);
+      }
+    // goodLuckVal.forEach(function(luck){
+    //   if (luck === true) {
+    //     lucky += 1;
+    //     newArray.push(luck);
+    //   }
+    // });
+    // console.log(newArray);
+    var total = (newArray);
+    console.log(total);
+    // $('#display').text(combine);
+    // $("#container2").show();
+    // $("#container1").hide();
+  })
+    event.preventDefault();
+  });
+});
