@@ -112,10 +112,10 @@
       console.log(totalLuck);
       if (totalLuck < 0) {
         $("#badLuckLevel").show();
-      } else if (totalLuck = 0) {
-        $("#neutralLuckLevel").show();
-      } else {
+      } else if (0 < totalLuck) {
         $("#goodLuckLevel").show();
+      } else {
+        $("#neutralLuckLevel").show();
       }
 
     $('#luck_survey').hide();
